@@ -12,6 +12,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6, input, button {
+    margin-top: 0;
     font-family: comical, sans-serif;
 }
 
@@ -72,4 +73,16 @@ h1, h2, h3, h4, h5, h6, input, button {
 
 .chosen-game {
     margin-top: auto;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-info h5 {
+    padding-left: 10px;
+    padding-right: 10px;
 }
