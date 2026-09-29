@@ -137,7 +137,7 @@ gameSlot.addEventListener("click", (e) => {
 
 spinner.addEventListener("click", () => {
     // speed up
-    targetSpeed = 1000;
+    targetSpeed += 1000;
 
     // slow down
     setTimeout(() => {
