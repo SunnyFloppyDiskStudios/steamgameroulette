@@ -135,5 +135,5 @@ spinner.addEventListener("click", () => {
     setTimeout(() => {
         targetSpeed = 0;
         spinningDown = true;
-    }, 1000);
+    }, 3000);
 });
