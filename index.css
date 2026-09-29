@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6, input, button {
     transform-origin: 0 0;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
     .game-info {
         flex-direction: column;
     }
