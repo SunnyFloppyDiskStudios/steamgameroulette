@@ -110,6 +110,10 @@ h1, h2, h3, h4, h5, h6, input, button {
     cursor: pointer;
 }
 
+#game-slot {
+    cursor: pointer;
+}
+
 .spinner-item {
     position: absolute;
     left: 50%;

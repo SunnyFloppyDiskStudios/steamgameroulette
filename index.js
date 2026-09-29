@@ -70,6 +70,10 @@ function getGame() {
 
     console.log(randomElement);
 
+    setTimeout(() => {
+        window.location.href = `steam://run/${gameID}`;
+    }, 500);
+
 }
 
 // stupid spinner function
@@ -125,6 +129,10 @@ subBox.addEventListener("keydown", (e) => {
 
 gameLink.addEventListener("click", (e) => {
     window.open(`https://store.steampowered.com/app/${gameID}`, "_blank").focus();
+});
+
+gameSlot.addEventListener("click", (e) => {
+    window.location.href = `steam://run/${gameID}`;
 });
 
 spinner.addEventListener("click", () => {
