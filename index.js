@@ -19,6 +19,13 @@ let fetchedData;
 let gameID;
 let listOfGames = [];
 
+// animation variables
+let rotation = 0;
+let speed = 12;
+let targetSpeed = speed;
+let lastTime = performance.now();
+let spinningDown = false;
+
 // get user info from box
 function getUserInfo() {
     steamID = subBox.value;
@@ -47,7 +54,6 @@ async function getData() {
     console.log(listOfGames);
 
     createSpinnerList();
-    getGame();
 }
 
 // get individual random game and relevant info
@@ -84,6 +90,31 @@ function createSpinnerList() {
     }
 }
 
+// super cool animator
+function animateSpinner(time) {
+    const deltaTime = (time - lastTime) / 1000;
+    lastTime = time;
+
+    speed += (targetSpeed - speed) * 0.03;
+
+    if (spinningDown && Math.abs(speed) < 0.1) {
+        speed = 0;
+
+        try { getGame(); } catch(e) {}
+
+        spinningDown = false;
+        targetSpeed = 12;
+    }
+
+    rotation += speed * deltaTime;
+
+    spinner.style.transform = `rotate(${rotation}deg)`;
+
+    requestAnimationFrame(animateSpinner);
+}
+
+requestAnimationFrame(animateSpinner);
+
 // listeners
 subButton.addEventListener("click", getUserInfo);
 subBox.addEventListener("keydown", (e) => {
@@ -94,4 +125,15 @@ subBox.addEventListener("keydown", (e) => {
 
 gameLink.addEventListener("click", (e) => {
     window.open(`https://store.steampowered.com/app/${gameID}`, "_blank").focus();
-})
+});
+
+spinner.addEventListener("click", () => {
+    // speed up
+    targetSpeed = 1000;
+
+    // slow down
+    setTimeout(() => {
+        targetSpeed = 0;
+        spinningDown = true;
+    }, 1000);
+});
