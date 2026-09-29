@@ -121,3 +121,13 @@ h1, h2, h3, h4, h5, h6, input, button {
     margin: 0;
     transform-origin: 0 0;
 }
+
+@media (max-width: 750px) {
+    .game-info {
+        flex-direction: column;
+    }
+
+    .user-text {
+        width: 250px;
+    }
+}
