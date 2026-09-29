@@ -60,19 +60,17 @@ h1, h2, h3, h4, h5, h6, input, button {
     height: 40px;
 }
 
-.spinner {
+.container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     height: calc(100vh - 84px);
 }
 
 .h1 {
     font-size: 50px;
-}
-
-.chosen-game {
-    margin-top: auto;
 }
 
 .game-info {
@@ -85,4 +83,31 @@ h1, h2, h3, h4, h5, h6, input, button {
 .game-info h5 {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+
+.spinner {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    position: relative;
+
+    justify-self: center;
+}
+
+#spinner-object {
+    position: relative;
+
+    width: min(500px, 70vw, 50vh);
+    height: min(500px, 70vw, 50vh);
+
+    aspect-ratio: 1;
+}
+
+.spinner-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    transform-origin: 0 0;
 }
