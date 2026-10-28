@@ -27,4 +27,4 @@ Because it's funnny
 ___
 { 2026 } [sunnyflops.net](https://sunnyflops.net)
 
-_This application was also submitted towards the NCEA level 2 iAS91893, iAS91896, iAS91897, eAS91899 standards. As a result, all work is my own, and no generative AI was used in the creation of this project._
+_This site was created with 0% generative AI. It's so simple. Why would I?_
