@@ -16,6 +16,7 @@ Because it's funnny
 ## Tools & Stacks used
 - HTML/CSS/JS
 - Steamworks API
+- canvas-confetti
 
 ## Current bugs / limitations
 - Lag with lots of games
