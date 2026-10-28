@@ -70,6 +70,42 @@ function getGame() {
 
     console.log(randomElement);
 
+    confetti({
+        particleCount: 2500,
+        spread: 180,
+        origin: { y: 1 }
+    });
+
+    setTimeout(() => {
+        confetti({
+            particleCount: 2500,
+            spread: 180,
+            origin: { y: 1 }
+        });
+    }, 100);
+
+    setTimeout(() => {
+        confetti({
+            particleCount: 2500,
+            spread: 180,
+            origin: { y: 1 }
+        });
+    }, 200);
+
+    setTimeout(() => {
+        confetti({
+            particleCount: 2500,
+            spread: 180,
+            origin: { y: 1 }
+        });
+    }, 300);
+
+    confetti({
+        particleCount: 2500,
+        spread: 180,
+        origin: { y: 1 }
+    });
+
     setTimeout(() => {
         window.location.href = `steam://run/${gameID}`;
     }, 500);
