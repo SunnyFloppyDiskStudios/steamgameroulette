@@ -8,6 +8,9 @@ let gameTime = document.getElementById("game-time");
 let gameLastPlayed = document.getElementById("game-lastplayed");
 let gameLink = document.getElementById("game-link");
 
+let warningUI = document.getElementById("warning");
+let warningText = document.getElementById("warning-text");
+
 // spinner uis
 let spinner = document.getElementById("spinner-object");
 
@@ -37,7 +40,16 @@ function getUserInfo() {
 
 // get game data
 async function getData() {
+    warningUI.style.display = "none";
+
     const response = await fetch(`https://sgr.biskitscheez.workers.dev/games?steamid=${steamID}`);
+
+    if (response.status === 404) {
+        warningUI.style.display = "flex";
+        warningText.innerText = "No Steam account found :(";
+
+        throw Error("quit");
+    }
 
     const data = await response.json();
 
@@ -45,15 +57,20 @@ async function getData() {
 
     console.log(fetchedData);
 
-    listOfGames = [];
+    if (fetchedData === null || fetchedData === undefined) {
+        warningUI.style.display = "flex";
+        warningText.innerText = "No data. Is your game library public?";
+    } else {
+        listOfGames = [];
 
-    for (let i = 0; i < fetchedData.length; i++) {
-        listOfGames.push(fetchedData[i].name);
+        for (let i = 0; i < fetchedData.length; i++) {
+            listOfGames.push(fetchedData[i].name);
+        }
+
+        console.log(listOfGames);
+
+        createSpinnerList();
     }
-
-    console.log(listOfGames);
-
-    createSpinnerList();
 }
 
 // get individual random game and relevant info

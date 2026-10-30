@@ -131,3 +131,20 @@ h1, h2, h3, h4, h5, h6, input, button {
         width: 250px;
     }
 }
+
+#warning {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    background-color: red;
+    color: white;
+    margin: 0;
+    width: 100%;
+}
+
+#warning h1 {
+    margin: 10px;
+}
